@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Added link to the jQuery library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <title>Crystal Collector</title>
+
+</head>
+
+<body>
+
+  <div class="jumbotron">
+    <h1 class="text-center">Crystal Collector</h1>
+  </div>
+
+  <div id="rules">
+    <p>You will be given a random number at the start of the game.</p><br>
+    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+      total score.</p><br>
+    <p>You win the game by matching your total score to random number, you lose the game if your total score goes
+      above the random number.</p><br>
+    <p>The value of each crystal is hidden from your until you click on it.</p><br>
+    <p>Each time when the game starts, the game will change the values of each crystal.</p><br>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-2">
+          <h3 class="card-header">Random Number</h3>
+          <div class="card-body text-center">
+            <button id="button-rn" class="btn btn-primary btn-choice" alert="computerRandom" value="#computerRandom">
+
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card mb-2">
+          <h3 class="card-header">Your Pick
+            <!-- Return button value with running total of var userTotal -->
+          </h3>
+          <div class="card-body text-center">
+            <button id="button-1" class="btn btn-primary btn-choice" value="button1">
+              <img src="./assets/images/blue_crystal.jpg" width="200px" height="200px">
+            </button>
+            <button id="button-2" class="btn btn-primary btn-choice" value="button2">
+              <img src="./assets/images/green_crystal.jpg" width="200px" height="200px">
+            </button>
+            <button id="button-3" class="btn btn-primary btn-choice" value="button3">
+              <img src="./assets/images/purple_crystal.jpg" width="200px" height="200px">
+            </button>
+            <button id="button-4" class="btn btn-primary btn-choice" value="button4">
+              <img src="./assets/images/red_crystal.jpg" width="200px" height="200px">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-2">
+          <h3 class="card-header">Result</h3>
+          <div class="card-body text-center">
+            <h1 id="result"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      var computerRandom = Math.floor(Math.random() * (120 - 19)) + 19;
+      var button1 = Math.floor(Math.random() * (13 - 1)) + 1;
+      var button2 = Math.floor(Math.random() * (13 - 1)) + 1;
+      var button3 = Math.floor(Math.random() * (13 - 1)) + 1;
+      var button4 = Math.floor(Math.random() * (13 - 1)) + 1;
+      var userTotal = 0;
+
+      // var lockGame = false;
+
+      console.log(computerRandom);
+
+      $("#button-rn").on("click", function () {
+        var computerRandom = Math.floor(Math.random() * (120 - 19)) + 19;
+
+        console.log("Computer Pick: " + computerRandom);
+      });
+
+      $(document).ready(function () {
+
+        $("#button-1").on("click", function () {
+          userTotal = userTotal + +button1;
+
+          console.log("Computer Pick: " + computerRandom);
+          console.log("button 1 = " + button1);
+          console.log("userTotal =  " + userTotal);
+
+        });
+
+        $("#button-2").on("click", function () {
+          userTotal = userTotal + +button2;
+
+          console.log("Computer Pick: " + computerRandom);
+          console.log("button 2 = " + button2);
+          console.log("userTotal =  " + userTotal);
+        });
+
+        $("#button-3").on("click", function () {
+          userTotal = userTotal + +button3;
+          console.log("Computer Pick: " + computerRandom);
+
+          console.log("button 3 = " + button3);
+          console.log("userTotal =  " + userTotal);
+        });
+
+        $("#button-4").on("click", function () {
+          userTotal = userTotal + +button4;
+
+          console.log("Computer Pick: " + computerRandom);
+          console.log("button 3 = " + button4);
+          console.log("userTotal =  " + userTotal);
+        });
+
+       
+
+        // <!-- Couldn't get these to run  -->
+
+        // document.getElementById("#button-1").value = "userTotal";
+
+        // document.getElementById("#button-2").value = "userTotal";
+
+        // document.getElementById("#button-3").value = "userTotal";
+
+        // document.getElementById("#button-4").value = "userTotal";
+
+        // document.getElementById("userTotal").value = "userTotal";
+// ------------------------------------------------------------------------------------------------------------
+        // document.getElementById("#button-1").addEventListener("click", myFunction);
+
+        // function myFunction() {
+        //   document.getElementById("userTotal").innerHTML = "userTotal";
+        // };
+
+        // document.getElementById("#button-2").addEventListener("click", myFunction);
+
+        // function myFunction() {
+        //   document.getElementById("userTotal").innerHTML = "userTotal";
+        // };
+
+        // document.getElementById("#button-3").addEventListener("click", myFunction);
+
+        // function myFunction() {
+        //   document.getElementById("userTotal").innerHTML = "userTotal";
+        // };
+
+        // document.getElementById("#button-4").addEventListener("click", myFunction);
+
+        // function myFunction() {
+        //   document.getElementById("userTotal").innerHTML = "userTotal";
+        // };
+
+        // Could not figure out the correct If/else statement to get the right logic.
+        // if (userTotal.value() > computerRandom)
+        //   losses++, status.setText("Busted!");
+        // else if (userTotal.value() === computerRandom) wins++, status.setText("Winner!");
+        // else(userTotal.value() < computerRandom), status.setText("Keep Guessing!")
+
+      });
+    });
+  </script>
+
+  <script src="./assets/javascript/game.js"></script>
+
+</body>
+
+</html>
