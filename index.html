@@ -37,9 +37,9 @@
         <div class="card mb-2">
           <h3 class="card-header">Random Number</h3>
           <div class="card-body text-center">
-            <button id="button-rn" class="btn btn-primary btn-choice" alert="computerRandom" value="#computerRandom">
+            <h1 class="random-number">
 
-            </button>
+            </h1>
           </div>
         </div>
       </div>
@@ -52,16 +52,16 @@
             <!-- Return button value with running total of var userTotal -->
           </h3>
           <div class="card-body text-center">
-            <button id="button-1" class="btn btn-primary btn-choice" value="button1">
+            <button id="button-1" class="btn btn-primary btn-choice button" value="button1">
               <img src="./assets/images/blue_crystal.jpg" width="200px" height="200px">
             </button>
-            <button id="button-2" class="btn btn-primary btn-choice" value="button2">
+            <button id="button-2" class="btn btn-primary btn-choice button" value="button2">
               <img src="./assets/images/green_crystal.jpg" width="200px" height="200px">
             </button>
-            <button id="button-3" class="btn btn-primary btn-choice" value="button3">
+            <button id="button-3" class="btn btn-primary btn-choice button" value="button3">
               <img src="./assets/images/purple_crystal.jpg" width="200px" height="200px">
             </button>
-            <button id="button-4" class="btn btn-primary btn-choice" value="button4">
+            <button id="button-4" class="btn btn-primary btn-choice button" value="button4">
               <img src="./assets/images/red_crystal.jpg" width="200px" height="200px">
             </button>
           </div>
@@ -73,117 +73,15 @@
       <div class="col-md-12">
         <div class="card mb-2">
           <h3 class="card-header">Result</h3>
+          <div class="userTotal"></div>
           <div class="card-body text-center">
             <h1 id="result"></h1>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-
-      var computerRandom = Math.floor(Math.random() * (120 - 19)) + 19;
-      var button1 = Math.floor(Math.random() * (13 - 1)) + 1;
-      var button2 = Math.floor(Math.random() * (13 - 1)) + 1;
-      var button3 = Math.floor(Math.random() * (13 - 1)) + 1;
-      var button4 = Math.floor(Math.random() * (13 - 1)) + 1;
-      var userTotal = 0;
-
-      // var lockGame = false;
-
-      console.log(computerRandom);
-
-      $("#button-rn").on("click", function () {
-        var computerRandom = Math.floor(Math.random() * (120 - 19)) + 19;
-
-        console.log("Computer Pick: " + computerRandom);
-      });
-
-      $(document).ready(function () {
-
-        $("#button-1").on("click", function () {
-          userTotal = userTotal + +button1;
-
-          console.log("Computer Pick: " + computerRandom);
-          console.log("button 1 = " + button1);
-          console.log("userTotal =  " + userTotal);
-
-        });
-
-        $("#button-2").on("click", function () {
-          userTotal = userTotal + +button2;
-
-          console.log("Computer Pick: " + computerRandom);
-          console.log("button 2 = " + button2);
-          console.log("userTotal =  " + userTotal);
-        });
-
-        $("#button-3").on("click", function () {
-          userTotal = userTotal + +button3;
-          console.log("Computer Pick: " + computerRandom);
-
-          console.log("button 3 = " + button3);
-          console.log("userTotal =  " + userTotal);
-        });
-
-        $("#button-4").on("click", function () {
-          userTotal = userTotal + +button4;
-
-          console.log("Computer Pick: " + computerRandom);
-          console.log("button 3 = " + button4);
-          console.log("userTotal =  " + userTotal);
-        });
-
-       
-
-        // <!-- Couldn't get these to run  -->
-
-        // document.getElementById("#button-1").value = "userTotal";
-
-        // document.getElementById("#button-2").value = "userTotal";
-
-        // document.getElementById("#button-3").value = "userTotal";
-
-        // document.getElementById("#button-4").value = "userTotal";
-
-        // document.getElementById("userTotal").value = "userTotal";
-// ------------------------------------------------------------------------------------------------------------
-        // document.getElementById("#button-1").addEventListener("click", myFunction);
-
-        // function myFunction() {
-        //   document.getElementById("userTotal").innerHTML = "userTotal";
-        // };
-
-        // document.getElementById("#button-2").addEventListener("click", myFunction);
-
-        // function myFunction() {
-        //   document.getElementById("userTotal").innerHTML = "userTotal";
-        // };
-
-        // document.getElementById("#button-3").addEventListener("click", myFunction);
-
-        // function myFunction() {
-        //   document.getElementById("userTotal").innerHTML = "userTotal";
-        // };
-
-        // document.getElementById("#button-4").addEventListener("click", myFunction);
-
-        // function myFunction() {
-        //   document.getElementById("userTotal").innerHTML = "userTotal";
-        // };
-
-        // Could not figure out the correct If/else statement to get the right logic.
-        // if (userTotal.value() > computerRandom)
-        //   losses++, status.setText("Busted!");
-        // else if (userTotal.value() === computerRandom) wins++, status.setText("Winner!");
-        // else(userTotal.value() < computerRandom), status.setText("Keep Guessing!")
-
-      });
-    });
-  </script>
 
   <script src="./assets/javascript/game.js"></script>
 
